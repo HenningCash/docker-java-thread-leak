@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.github.henningcash.test'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = "com.github.henningcash.test.Application"
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // Docker
+    implementation "com.github.docker-java:docker-java:3.2.5"
+    implementation "com.github.docker-java:docker-java-transport-httpclient5:3.2.5"
+}
