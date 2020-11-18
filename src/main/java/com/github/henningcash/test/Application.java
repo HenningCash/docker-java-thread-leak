@@ -34,9 +34,9 @@ public class Application {
                 System.out.printf("Exec No %d...%n", i);
 
                 // tailing /dev/null does NOT produce output and will leak threads
-                //var streamingAdapter = runExec(containerId, "tail", "-f", "/dev/null");
+                var streamingAdapter = runExec(containerId, "tail", "-f", "/dev/null");
                 // watch produces output every 1sec and does NOT leak threads
-                var streamingAdapter = runExec(containerId, "watch", "-n", "1", "date");
+                //var streamingAdapter = runExec(containerId, "watch", "-n", "1", "date");
 
                 TimeUnit.SECONDS.sleep(3);
                 System.out.println("Closing exec instance prematurely...");
